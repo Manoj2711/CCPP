@@ -1,0 +1,403 @@
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class CheckPositiveNegative {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=sc.nextInt();
+		String result=(num>0)?"positive":"negative";
+		System.out.println("given number is" +result);
+		
+
+	}
+
+}
+
+=========================================================================================
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class CheckingVowelConsonant {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+        char ch=sc.next().charAt(0);
+        if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+        {
+        	System.out.println("vowles");
+        }
+        else
+        {
+        	System.out.println("consonant");
+        }
+	}
+
+}
+=========================================================================================
+
+
+
+package com.cdac;
+
+public class FactorailWithRecursion {
+
+	public static void main(String[] args) {
+		
+		int n=5;
+		int fact=factorial(n);
+		System.out.println(fact);
+
+	}
+	
+	public static int factorial(int n)
+	{
+		if(n==0)
+			return 1;
+		return n*factorial(n-1);
+	}
+
+}
+
+==========================================================================================
+
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class FibonnacciSeries {
+    
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the range");
+		int n=sc.nextInt();
+		int a=0,b=1,c=0;
+		for(int i=0;i<n;i++)
+		{
+			System.out.println(c+" ");
+			c=a+b;
+			a=b;
+			b=c;
+	
+		}
+	}
+}
+
+=============================================================================================
+
+package com.cdac;
+
+public class LargestElementInArray {
+
+	public static void main(String[] args) {
+		int arr[]= {10,45,2,19,10};
+        int max=arr[0];;
+		for(int i=0;i<arr.length;i++)
+		{
+	
+			if(arr[i]>max)
+			{
+				max=arr[i];
+			}
+		}
+		
+		System.out.println("maximum elemnt="+max);
+	}
+
+}
+
+================================================================================================
+
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class LargestNumberFromGivenNumbers {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the all the number");
+		int arr[]=new int[5];
+		for(int i=0;i<5;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		
+		for(int i=0;i<5;i++)
+		{
+			for(int j=0;j<5-1;j++)
+			{
+				if(arr[j]<arr[j+1])
+				{
+					int temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		 
+          System.out.println("largest number="+arr[0]);
+	}
+
+}
+
+
+===============================================================================================
+
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class Palindrome {
+     public static void main(String[] args)
+     {
+    	 Scanner sc=new Scanner(System.in);
+    	 System.out.println("enter the no.");
+    	 int num=sc.nextInt();
+    	 int temp=num;
+    	 int rev=0;
+    	 while(num>0)
+    	 {
+    		 int rem=num%10;
+    		 rev=rev*10+rem;
+    		 num=num/10;
+    	 }
+    	 if(rev==temp)
+    	 {
+    		 System.out.println("palindrome");
+    	 }
+    	 else
+    	 {
+    		 System.out.println("not palindrome");
+    	 }
+     }
+}
+
+================================================================================================
+
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class PrimeNoCheck {
+
+	public static void main(String[] args) {
+		
+           Scanner sc=new Scanner(System.in);
+           int n=sc.nextInt();
+           int count=0;
+           for(int i=2;i<n/2;i++)
+           {
+        	   if(n%i==0)
+        	   {
+        		   count++;
+        	   }
+           }
+           if(count==1)
+           {
+        	   System.out.println("not prime no");
+           }
+           else
+           {
+        	   System.out.println("prime no");
+           }
+	}
+
+}
+
+
+=================================================================================================
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=sc.nextInt();
+         int rev=0;
+		while(num>0)
+		{
+			int rem=num%10;
+			rev=rev*10+rem;
+			num=num/10;
+		}
+		System.out.println("reverse number="+rev);
+	}
+
+}
+
+===============================================================================================
+
+
+package com.cdac;
+
+public class ReverseSentenceUsingRecursion {
+
+	public static void main(String[] args) {
+		  
+		String s="mehul Welcome";
+		String revString=reverse(s);
+		System.out.println("reverse string="+revString);
+
+	}
+	
+	//using recursion
+	
+	public static String reverse(String s)
+	{
+		if(s.isEmpty())
+		{
+			return s;
+		}
+		else
+		{
+			char ch=s.charAt(0);
+			return reverse(s.substring(1))+ch;
+		}
+	}
+
+==============================================================================================
+
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class UppercaseA_Z {
+	public static void main(String[] args) {
+//		for(int i=65;i<=90;i++)
+//		{
+//			char ch=(char)i;
+//			System.out.print(ch);
+//		}
+		
+		for(char ch='A';ch<='Z';ch++)
+		{
+			System.out.println(ch);
+		}
+	}
+}
+
+
+=============================================================================================
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class factorialWithoutRecursion {
+ 
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=sc.nextInt();
+		int result=1;
+		for(int i=1;i<=5;i++)
+		{
+			result=result*i;
+		}
+		
+      System.out.println("factorialof number="+result);
+	}
+}
+
+===============================================================================================
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class fibonaaciSeriesUptoNth {
+     
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the range");
+		int n=sc.nextInt();
+		int c=0;
+		int a=0,b=1;
+		while(c<=n)
+		{
+			System.out.print(c+"+");
+            c=a+b;
+            a=b;
+            b=c;
+		}
+	}
+}
+
+===============================================================================================
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class swapUsingTempVariable {
+	public static void main(String[] args) {
+		int a=10,b=20;
+		swap(a,b);
+		
+
+	}
+	
+	public  static void swap(int a,int b)
+	{
+		int temp=a;
+		a=b;
+		b=temp;
+		System.out.println(a+" "+b);
+	}
+}
+
+===============================================================================================
+
+package com.cdac;
+
+import java.util.Scanner;
+
+public class swapUsingWithoutTempVariable {
+	public static void main(String[] args) {
+		int a=10,b=20;
+		swap(a,b);
+		
+
+	}
+	
+	public  static void swap(int a,int b)
+	{
+		a=a+b;
+		b=a-b;
+		a=a-b;
+		System.out.println(a+" "+b);
+	}
+}
+
+================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
